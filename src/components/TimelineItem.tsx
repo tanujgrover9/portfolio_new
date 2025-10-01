@@ -1,4 +1,4 @@
-import React from 'react';
+
 export const TimelineItem = ({ title, period, desc }: { title: string; period: string; desc?: string }) => (
 <div className="mt-4">
 <div className="flex items-center justify-between">
