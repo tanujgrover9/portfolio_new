@@ -1,28 +1,17 @@
-/* --------------------------------------------------
-   1. Imports – MUST be first
--------------------------------------------------- */
+
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oleo+Script&display=swap');
 
-/* --------------------------------------------------
-   2. Tailwind base – must follow imports
--------------------------------------------------- */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* --------------------------------------------------
-   3. Global styles
--------------------------------------------------- */
 body, html {
   background-color: #fffdf7;
 }
 
-/* --------------------------------------------------
-   4. Font utilities
--------------------------------------------------- */
 .font-handwriting {
   font-family: "Gloria Hallelujah", cursive;
 }
@@ -131,3 +120,4 @@ body, html {
   stroke-dasharray: 6 6;
   animation: dash 8s linear infinite;
 }
+
