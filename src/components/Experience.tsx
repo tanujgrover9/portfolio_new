@@ -56,7 +56,7 @@ export const Experience = () => {
       </svg>
 
       {/* Heading */}
-      <h2 className="text-5xl font-extrabold mb-12 text-center relative">
+      <h2 className="text-5xl font-extrabold mb-12 text-center relative font-handwriting">
         My{" "}
         <span className="text-pink-500 font-handwriting rotate-[-2deg] inline-block relative">
           Experience

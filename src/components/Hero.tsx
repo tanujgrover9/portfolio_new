@@ -4,7 +4,7 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import {
   FaPenNib,
   FaCode,
-  FaUserCircle,
+ 
   FaReact,
 
   FaJsSquare,
@@ -133,20 +133,34 @@ export default function Hero() {
 >
   {/* Left: Name */}
   <div className="flex items-center gap-3 relative">
-    <FaUserCircle className="text-3xl text-gray-800" />
-    <span className="font-semibold text-lg relative">
-      Anshuman Singh
-      <svg
-        className="absolute left-0 bottom-[-6px] w-full h-3 text-pink-400"
-        viewBox="0 0 100 10"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
-        <path d="M2 6 Q10 2, 20 6 T 40 4 T 60 7 T 80 5 T 100 6" />
-      </svg>
-    </span>
-  </div>
+  {/* Doodle User Icon */}
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 64 64"
+    className="w-10 h-10 text-gray-800"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+  >
+    <path d="M32 32c8 0 14-6 14-14s-6-14-14-14-14 6-14 14 6 14 14 14z" />
+    <path d="M8 60c0-8 12-14 24-14s24 6 24 14" />
+  </svg>
+
+  <span className="font-semibold text-lg relative font-handwriting">
+    Anshuman Singh
+    {/* Sketch underline */}
+    <svg
+      className="absolute left-0 bottom-[-6px] w-full h-3 text-pink-400"
+      viewBox="0 0 100 10"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+    >
+      <path d="M2 6 Q10 2, 20 6 T 40 4 T 60 7 T 80 5 T 100 6" />
+    </svg>
+  </span>
+</div>
+
 
   {/* Right: Navigation */}
   <div className="flex items-center gap-4">

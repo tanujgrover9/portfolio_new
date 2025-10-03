@@ -48,7 +48,7 @@ export const Projects = () => {
       {/* Heading */}
       <div className="text-center mb-14 relative z-10">
         <p className="italic text-pink-600 font-handwriting text-xl">My Work</p>
-        <h3 className="text-5xl font-extrabold text-gray-900 mt-6 relative inline-block">
+        <h3 className="text-5xl font-extrabold text-gray-900 mt-6 relative inline-block font-handwriting">
           Featured{" "}
           <span className="bg-pink-300 px-2 rounded-lg font-handwriting relative">
             Projects

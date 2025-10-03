@@ -57,7 +57,7 @@ export const Skills = () => {
         <p className="italic text-pink-600 font-handwriting text-xl mb-2">
           Tools I love to use
         </p>
-        <h3 className="text-5xl font-extrabold text-black relative inline-block">
+        <h3 className="text-5xl font-extrabold text-black relative inline-block font-handwriting">
           My{" "}
           <span className="relative text-yellow-600 font-handwriting rotate-[-2deg] inline-block">
             Skills
@@ -128,4 +128,3 @@ export const Skills = () => {
     </section>
   );
 };
-
