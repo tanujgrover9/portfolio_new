@@ -10,9 +10,9 @@ export const Contact = () => {
   return (
     <section
       id="contacts"
-      className="relative min-h-screen px-8 py-20 bg-cream overflow-hidden"
+      className="relative min-h-screen px-8 py-20 bg-cream overflow-hidden "
     >
-      {/* Hand-sketched background lines */}
+      
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none z-0"
         viewBox="0 0 100 100"
@@ -44,7 +44,7 @@ export const Contact = () => {
       </svg>
 
       {/* Section Heading */}
-      <h3 className="text-5xl font-extrabold text-center mb-12 font-handwriting">
+      <h3 className="text-5xl font-extrabold text-center mt-30 mb-10 font-handwriting relative">
         Let’s <span className="text-pink-500 px-3 rounded-lg">Connect</span>
       </h3>
 

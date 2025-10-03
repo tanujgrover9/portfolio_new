@@ -6,6 +6,7 @@ import { Experience } from './components/Experience';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { About } from './components/About';
+import { WebsiteApproach } from './components/Approach';
 // import { CorkboardSections } from './components/CorkboardSections';
 // import { TechStack } from './components/Stack';
 // import { Header } from './components/Header';
@@ -18,6 +19,7 @@ export default function App() {
         {/* <Header/> */}
         <Hero />
       <About/>
+      <WebsiteApproach/>
                 <Skills />
 
         <Projects />

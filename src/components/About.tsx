@@ -1,7 +1,7 @@
-
 import { motion } from "framer-motion";
 
 const stickyColors = ["#FFEB99", "#FFB3B3", "#B3E5FC", "#C8E6C9"];
+const tapeColors = ["#FFD1DC", "#C8E6C9", "#B3E5FC", "#FFF176"]; // pastel washi-tape colors
 const rotations = ["-rotate-2", "rotate-2", "-rotate-1", "rotate-1"];
 
 // Hand-drawn sketch animation variant
@@ -20,9 +20,36 @@ const floatAnim = {
   transition: { repeat: Infinity, duration: 3, ease: "easeInOut" },
 };
 
+// Tape piece component
+const Tape = ({ position, color }: { position: "top" | "bottom"; color: string }) => {
+  const baseClasses =
+    "absolute left-1/2 -translate-x-1/2 w-24 h-6 opacity-80 z-20";
+  const tornEdge = {
+    backgroundImage: `linear-gradient(135deg, ${color} 60%, transparent 60%),
+                     linear-gradient(-135deg, ${color} 60%, transparent 60%)`,
+    backgroundSize: "12px 12px",
+    backgroundRepeat: "repeat-x",
+  };
+
+  return (
+    <div
+      className={`${baseClasses} ${position === "top" ? "-top-4" : "-bottom-4"}`}
+      style={{
+        backgroundColor: color,
+        clipPath:
+          "polygon(0 0, 95% 0, 100% 20%, 100% 100%, 5% 100%, 0 80%)",
+        ...tornEdge,
+      }}
+    />
+  );
+};
+
 export const About = () => {
   return (
-    <section id="about" className="relative px-8 py-20 space-y-16 overflow-hidden min-h-screen bg-cr-200">
+    <section
+      id="about"
+      className="relative px-8 py-20 space-y-16 overflow-hidden min-h-screen bg-cr-200"
+    >
       {/* Background like sketchbook paper */}
       <svg
         className="absolute inset-0 w-full h-full pointer-events-none z-0"
@@ -31,7 +58,12 @@ export const About = () => {
         xmlns="http://www.w3.org/2000/svg"
       >
         <defs>
-          <pattern id="paper-grain" width="0.5" height="0.5" patternUnits="userSpaceOnUse">
+          <pattern
+            id="paper-grain"
+            width="0.5"
+            height="0.5"
+            patternUnits="userSpaceOnUse"
+          >
             <rect width="0.5" height="0.5" fill="rgba(255,255,255,0.04)" />
           </pattern>
         </defs>
@@ -88,65 +120,55 @@ export const About = () => {
 
       {/* Sticky Notes Grid */}
       <div className="grid md:grid-cols-2 gap-12 items-start justify-center relative z-10">
-        {/* Sticky Note 1 */}
-        <motion.div
-          className={`sticky-note p-8 relative ${rotations[0]}`}
-          style={{ backgroundColor: stickyColors[0] }}
-          whileHover={{ scale: 1.05, rotate: -1 }}
-        >
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-5 h-5 bg-red-500 rounded-full shadow-md border border-black/30"></div>
-          <h4 className="text-2xl font-handwriting mb-4">Hello! I’m Anshuman</h4>
-          <p className="text-gray-700 font-handwriting">
-            I’m a passionate frontend developer & designer who loves turning
-            ideas into beautiful, interactive web experiences. I specialize in
-            React, Tailwind, and creating doodle-style UI designs.
-          </p>
-        </motion.div>
+        {[
+          {
+            title: "Hello! I’m Anshuman",
+            content:
+              "I’m a passionate frontend developer & designer who loves turning ideas into beautiful, interactive web experiences. I specialize in React, Tailwind, and creating doodle-style UI designs.",
+          },
+          {
+            title: "What I Do",
+            content: (
+              <ul className="list-disc ml-5 space-y-2 text-gray-700 font-handwriting">
+                <li>Designing user-friendly web interfaces</li>
+                <li>Creating doodle & playful UI themes</li>
+                <li>Developing responsive React applications</li>
+                <li>Bringing ideas to life with modern frontend tech</li>
+              </ul>
+            ),
+          },
+          {
+            title: "My Philosophy",
+            content: (
+              <p className="italic">
+                “Design is not just what it looks like. Design is how it works.” – I
+                bring creativity and functionality together in every project.
+              </p>
+            ),
+          },
+          {
+            title: "Fun Fact",
+            content:
+              "I love combining doodle sketches with digital design to make interfaces more playful and engaging. My workspace? A virtual corkboard full of sticky notes and ideas!",
+          },
+        ].map((note, i) => (
+          <motion.div
+            key={i}
+            className={`sticky-note p-8 relative shadow-lg rounded-md ${rotations[i]}`}
+            style={{ backgroundColor: stickyColors[i] }}
+            whileHover={{ scale: 1.05, rotate: i % 2 === 0 ? -1 : 1 }}
+          >
+            {/* Top & bottom tape strips */}
+            <Tape position="top" color={tapeColors[i % tapeColors.length]} />
+            <Tape
+              position="bottom"
+              color={tapeColors[(i + 1) % tapeColors.length]}
+            />
 
-        {/* Sticky Note 2 */}
-        <motion.div
-          className={`sticky-note p-8 relative ${rotations[1]}`}
-          style={{ backgroundColor: stickyColors[1] }}
-          whileHover={{ scale: 1.05, rotate: 1 }}
-        >
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-5 h-5 bg-red-500 rounded-full shadow-md border border-black/30"></div>
-          <h4 className="text-2xl font-handwriting mb-4">What I Do</h4>
-          <ul className="list-disc ml-5 space-y-2 text-gray-700 font-handwriting">
-            <li>Designing user-friendly web interfaces</li>
-            <li>Creating doodle & playful UI themes</li>
-            <li>Developing responsive React applications</li>
-            <li>Bringing ideas to life with modern frontend tech</li>
-          </ul>
-        </motion.div>
-
-        {/* Sticky Note 3 */}
-        <motion.div
-          className={`sticky-note p-8 relative ${rotations[2]}`}
-          style={{ backgroundColor: stickyColors[2] }}
-          whileHover={{ scale: 1.05, rotate: -2 }}
-        >
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-5 h-5 bg-red-500 rounded-full shadow-md border border-black/30"></div>
-          <h4 className="text-2xl font-handwriting mb-4">My Philosophy</h4>
-          <p className="text-gray-700 font-handwriting italic">
-            “Design is not just what it looks like. Design is how it works.” – I
-            bring creativity and functionality together in every project.
-          </p>
-        </motion.div>
-
-        {/* Sticky Note 4 */}
-        <motion.div
-          className={`sticky-note p-8 relative ${rotations[3]}`}
-          style={{ backgroundColor: stickyColors[3] }}
-          whileHover={{ scale: 1.05, rotate: 2 }}
-        >
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-5 h-5 bg-red-500 rounded-full shadow-md border border-black/30"></div>
-          <h4 className="text-2xl font-handwriting mb-4">Fun Fact</h4>
-          <p className="text-gray-700 font-handwriting">
-            I love combining doodle sketches with digital design to make
-            interfaces more playful and engaging. My workspace? A virtual
-            corkboard full of sticky notes and ideas!
-          </p>
-        </motion.div>
+            <h4 className="text-2xl font-handwriting mb-4">{note.title}</h4>
+            <div className="text-gray-700 font-handwriting">{note.content}</div>
+          </motion.div>
+        ))}
       </div>
     </section>
   );
