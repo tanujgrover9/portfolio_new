@@ -182,7 +182,7 @@ export default function Hero() {
 
     {/* Download CV – Always visible */}
     <a
-      href="https://drive.google.com/file/d/1eI8Qg-F9aVmxrhW3_yZJgWVSKw0YgviU/view?usp=sharing"
+      href="https://drive.google.com/file/d/10lW0AUEhAT5RNxoScXjISSiZRYhDuFk3/view?usp=sharing"
       download="Anshuman_Singh_CV.pdf"
       className="px-3 py-2 rounded-full border border-gray-300 hover:bg-gray-50 font-medium font-handwriting"
     >
@@ -350,3 +350,4 @@ export default function Hero() {
     </div>
   );
 }
+
