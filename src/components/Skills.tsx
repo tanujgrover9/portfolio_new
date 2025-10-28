@@ -1,4 +1,3 @@
-
 import {
   FaHtml5,
   FaCss3Alt,
@@ -11,8 +10,13 @@ import {
   SiTailwindcss,
   SiFramer,
   SiGraphql,
+  SiRedux,
+  SiMaterialdesign,
+ 
 } from "react-icons/si";
+import { GiBearFace } from "react-icons/gi"; 
 import { motion } from "framer-motion";
+import { MdOutlineStorage } from "react-icons/md"; 
 
 export const Skills = () => {
   const skills = [
@@ -25,6 +29,11 @@ export const Skills = () => {
     { name: "Framer Motion", icon: <SiFramer />, color: "text-pink-500" },
     { name: "GraphQL", icon: <SiGraphql />, color: "text-fuchsia-500" },
     { name: "Git", icon: <FaGitAlt />, color: "text-red-500" },
+    
+    { name: "Context API", icon: <MdOutlineStorage />, color: "text-amber-600" },
+    { name: "Redux", icon: <SiRedux />, color: "text-purple-500" },
+    { name: "Material UI", icon: <SiMaterialdesign />, color: "text-blue-400" },
+{ name: "Zustand", icon: <GiBearFace />, color: "text-emerald-600" },
   ];
 
   const tapeColors = ["bg-yellow-200", "bg-pink-200", "bg-green-200", "bg-blue-200"];
@@ -91,11 +100,16 @@ export const Skills = () => {
               } opacity-80 shadow`}
             ></span>
 
-            {/* Icon with bounce */}
+            {/* Icon */}
             <motion.div
               initial={{ scale: 0, rotate: -20 }}
               whileInView={{ scale: 1, rotate: 0 }}
-              transition={{ type: "spring", stiffness: 200, damping: 10, delay: i * 0.1 }}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 10,
+                delay: i * 0.1,
+              }}
               viewport={{ once: true }}
               className="text-5xl mb-3"
             >
@@ -110,7 +124,6 @@ export const Skills = () => {
         ))}
       </div>
 
-      {/* Floating doodles */}
       <motion.div
         animate={{ y: [0, -10, 0] }}
         transition={{ repeat: Infinity, duration: 4 }}
