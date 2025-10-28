@@ -12,8 +12,8 @@ import project3 from "../assets/projects/p3.png";
 import project4 from "../assets/projects/p4.png";
 import project5 from "../assets/projects/p5.png";
 import project6 from "../assets/projects/p6.png";
-import project7 from "../assets/projects/WhatsApp Image 2025-10-28 at 16.34.04_6acc594e.jpg";
-import project8 from "../assets/projects/WhatsApp Image 2025-10-28 at 16.39.53_6a326084.jpg";
+import project7 from "../assets/projects/p7.jpg";
+import project8 from "../assets/projects/p8.jpg";
 
 
 
