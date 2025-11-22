@@ -12,8 +12,9 @@ import project3 from "../assets/projects/p3.png";
 import project4 from "../assets/projects/p4.png";
 import project5 from "../assets/projects/p5.png";
 import project6 from "../assets/projects/p6.png";
-import project7 from "../assets/projects/p7.jpg";
+import project7 from "../assets/projects/HomelyBox.jpg";
 import project8 from "../assets/projects/p8.jpg";
+import project9 from "../assets/projects/image.png";
 
 
 
@@ -23,7 +24,7 @@ export const projects: Project[] = [
     id: 1,
     title: "Pikxl- Ai image Generation ",
     description: "A clean and modern marketplace where creators transform imagination into income. Upload, sell, and grow your AI-powered art, music, videos, and more.",
-    tags: ["React", "TypeScript", "Tailwind", "Recharts", "Api"],
+    tags: ["React", "TypeScript", "Tailwind", "Recharts", "OpenAi Api"],
     link: "https://pixel-neon-pi.vercel.app/",
     image: project1,
   },
@@ -45,12 +46,13 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: "StartUp connect",
-    description: "Your one-stop platform to connect with investors, mentors, and co-founders to turn your startup vision into reality.",
-    tags: ["Storybook", "React", "Accessibility"],
-    link: "https://startupconnect-4gqp.vercel.app/",
-    image: project3,
+    title: "Profind",
+    description: "Job portal where you can find all the Remote hybrid onsite job",
+    tags: ["Api", "React", "Accessibility", "Material UI", "Zustand"],
+    link: "https://inteliq-taupe.vercel.app/",
+    image: project9,
   },
+ 
   
   {
     id: 3,
@@ -70,8 +72,8 @@ export const projects: Project[] = [
   },
    {
     id: 3,
-    title: "Tiffin- Food Application",
-    description: "Meal & Healthy Diet Food website",
+    title: "HomelyBox- Food Application",
+    description: "Meal & Healthy Diet Food website where you can order food",
     tags: ["Storybook", "React", "Accessibility", "Farmer Motion","Zustand", "ContextAPI"],
     link: "https://tiffin-397v.vercel.app/",
     image: project7,
@@ -84,4 +86,13 @@ export const projects: Project[] = [
     link: "https://inteliq-taupe.vercel.app/",
     image: project8,
   },
+   {
+    id: 3,
+    title: "StartUp connect",
+    description: "Your one-stop platform to connect with investors, mentors, and co-founders to turn your startup vision into reality.",
+    tags: ["Storybook", "React", "Accessibility"],
+    link: "https://startupconnect-4gqp.vercel.app/",
+    image: project3,
+  },
+   
 ];
