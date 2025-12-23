@@ -14,7 +14,6 @@ import project5 from "../assets/projects/p5.png";
 import project6 from "../assets/projects/p6.png";
 import project7 from "../assets/projects/HomelyBox.jpg";
 import project8 from "../assets/projects/p8.jpg";
-import project9 from "../assets/projects/image.png";
 import project10 from "../assets/projects/p9.jpeg";
 import project11 from "../assets/projects/p10.jpeg";
 
@@ -106,3 +105,4 @@ export const projects: Project[] = [
   },
    
 ];
+
