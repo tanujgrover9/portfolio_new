@@ -15,6 +15,8 @@ import project6 from "../assets/projects/p6.png";
 import project7 from "../assets/projects/HomelyBox.jpg";
 import project8 from "../assets/projects/p8.jpg";
 import project9 from "../assets/projects/image.png";
+import project10 from "../assets/projects/p9.jpeg";
+import project11 from "../assets/projects/p10.jpeg";
 
 
 
@@ -49,8 +51,16 @@ export const projects: Project[] = [
     title: "Profind",
     description: "Job portal where you can find all the Remote hybrid onsite job",
     tags: ["Api", "React", "Accessibility", "Material UI", "Zustand"],
-    link: "https://inteliq-taupe.vercel.app/",
-    image: project9,
+    link: "https://profindai.vercel.app/",
+    image: project11,
+  },
+   {
+    id: 3,
+    title: "BharatServices",
+    description: "Trusted Government Services & Updates- Secure access to official government services, verified links, and timely public information — all in one place",
+    tags: ["Api", "React", "Accessibility", "Material UI", "Zustand"],
+    link: "https://bharatservices.vercel.app/",
+    image: project10,
   },
  
   
