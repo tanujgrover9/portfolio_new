@@ -16,6 +16,7 @@ import project7 from "../assets/projects/HomelyBox.jpg";
 import project8 from "../assets/projects/p8.jpg";
 import project10 from "../assets/projects/p9.jpeg";
 import project11 from "../assets/projects/p10.jpeg";
+import project12 from "../assets/projects/p11.jpeg";
 
 
 
@@ -29,14 +30,19 @@ export const projects: Project[] = [
     link: "https://pixel-neon-pi.vercel.app/",
     image: project1,
   },
-  {
-    id: 2,
-    title: "Konnect",
-    description: "A Video call app for meeting and call",
-    tags: ["Next.js", "Clerk", "Tailwind", "Auth"],
-    link: "https://konnect-snowy.vercel.app/",
-    image: project2,
+   {
+    id: 3,
+    title: "JobFlow AI – AI-powered Job Application Automation",
+    description: "Built an end-to-end no-code automation using Zapier and OpenAI to parse job emails, extract structured job data, filter relevant roles, and notify users via email while logging approved jobs in Google Docs.",
+    tags: ["Storybook", "React", "Accessibility","Zapier (No-Code Automation)",
+"OpenAI (GPT-4o-mini)",
+"Gmail Trigger",
+"Google Docs",
+"AI Approval Workflow"],
+    link: "job-flow-ai-two.vercel.app",
+    image: project12,
   },
+ 
   {
     id: 3,
     title: "Pass Club",
@@ -61,7 +67,14 @@ export const projects: Project[] = [
     link: "https://bharatservices.vercel.app/",
     image: project10,
   },
- 
+  {
+    id: 2,
+    title: "Konnect",
+    description: "A Video call app for meeting and call",
+    tags: ["Next.js", "Clerk", "Tailwind", "Auth"],
+    link: "https://konnect-snowy.vercel.app/",
+    image: project2,
+  },
   
   {
     id: 3,
@@ -103,6 +116,6 @@ export const projects: Project[] = [
     link: "https://startupconnect-4gqp.vercel.app/",
     image: project3,
   },
+  
    
 ];
-
