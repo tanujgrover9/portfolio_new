@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, } from "react";
 import {
   motion,
   useMotionValue,
@@ -83,51 +83,37 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen overflow-hidden p-12">
-      {/* ===== STRIPE STYLE BACKGROUND ===== */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-[linear-gradient(120deg,#020617_0%,#0b3c5d_45%,#0f172a_100%)]" />
-        <div
-          className="absolute bottom-0 left-0 right-0 h-[45%] bg-black"
-          style={{
-            clipPath: "polygon(0 25%, 100% 0%, 100% 100%, 0% 100%)",
-          }}
-        />
-      </div>
-
+    <section className="relative min-h-screen bg-black overflow-hidden p-12">
       {/* Spotlight */}
       <motion.div className="absolute inset-0" style={{ background: glow }} />
 
       {/* Grid */}
       <div
-        className="absolute inset-0 opacity-[0.02]"
+        className="absolute inset-0 opacity-[0.080]"
         style={{
           backgroundImage:
-            "linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
+            "linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)",
+          backgroundSize: "90px 90px",
         }}
       />
 
       <div className="relative z-10 max-w-7xl mx-auto pt-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         {/* LEFT */}
         <div className="space-y-8">
-          <span className="inline-flex rounded-full bg-white/60 px-4 py-1.5 text-sm text-black/80 backdrop-blur font-handwriting">
+          <span className="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-white/60 font-handwriting">
             Frontend Engineer · Creative Technologist
           </span>
 
-          <h1
-            className="text-[clamp(2.5rem,5vw,5rem)] leading-[1.05] font-semibold
-  bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white
-  bg-clip-text text-transparent"
-          >
+          <h1 className="text-[clamp(2.5rem,5vw,5rem)] leading-[1.05] font-semibold text-white">
             Designing & engineering
             <br />
-            <span className=" font-extrabold text-yellow-500">premium interfaces</span>
+            premium interfaces
           </h1>
 
-          <p className="max-w-xl text-lg text-white leading-relaxed ">
-            I’m <span className="text-white font-medium">Anshuman Singh</span> —
-            a frontend engineer crafting scalable React systems and AI-powered
+          <p className="max-w-xl text-lg text-white/65 leading-relaxed">
+            I’m{" "}
+            <span className="text-white font-medium">Anshuman Singh</span> — a
+            frontend engineer crafting scalable React systems and AI-powered
             automations using OpenAI, n8n & modern motion design.
           </p>
 
@@ -139,7 +125,7 @@ export default function Hero() {
             </a>
 
             <a href="https://drive.google.com/file/d/1fvxwJD3-C-J0p6nBcLPvdLS7ZsRIp2g7/view">
-              <MagneticButton className="rounded-full border border-white/15 px-8 py-3 text-sm font-medium text-white hover:bg-black/5">
+              <MagneticButton className="rounded-full border border-white/15 px-8 py-3 text-sm font-medium text-white hover:bg-white/10">
                 Download CV
               </MagneticButton>
             </a>
@@ -154,48 +140,69 @@ export default function Hero() {
             style={{ rotateX: tiltX, rotateY: tiltY }}
             className="w-full max-w-[420px] rounded-3xl border border-white/10 bg-[#0b0b0c] shadow-[0_60px_160px_rgba(0,0,0,0.8)] overflow-hidden"
           >
+            {/* Title bar */}
             <div className="flex items-center gap-2 px-4 py-3 bg-white/5 border-b border-white/10">
               <span className="h-3 w-3 rounded-full bg-red-500" />
               <span className="h-3 w-3 rounded-full bg-yellow-400" />
               <span className="h-3 w-3 rounded-full bg-green-500" />
-              <span className="ml-3 text-xs text-white/40">portfolio.tsx</span>
+              <span className="ml-3 text-xs text-white/40">
+                portfolio.tsx
+              </span>
             </div>
 
+            {/* CODE */}
             <pre className="p-6 text-sm font-mono leading-relaxed whitespace-pre-wrap text-[#e5e7eb]">
-              <code>
-                {" "}
-                <span className="text-[#c792ea]">
-                  export default function
-                </span>{" "}
-                <span className="text-[#82aaff]">Portfolio</span>() {"{"}{" "}
-                {"\n "} <span className="text-[#c792ea]">return</span> ( {"\n "}{" "}
-                <span className="text-[#89ddff]">&lt;section</span>{" "}
-                <span className="text-[#82aaff]">className</span>{" "}
-                <span className="text-[#89ddff]">=</span>{" "}
-                <span className="text-[#ecc48d]">"experience"</span>{" "}
-                <span className="text-[#89ddff]">&gt;</span> {"\n "}{" "}
-                <span className="text-[#89ddff]">&lt;h1&gt;</span> Frontend
-                Engineer <span className="text-[#89ddff]">&lt;/h1&gt;</span>{" "}
-                {"\n\n "} <span className="text-[#89ddff]">&lt;p&gt;</span> I
-                build scalable SaaS products with React, motion, and modern UI
-                systems. <span className="text-[#89ddff]">&lt;/p&gt;</span>{" "}
-                {"\n\n "} <span className="text-[#89ddff]">&lt;p&gt;</span> I
-                design AI automation using OpenAI, n8n, and Zapier to streamline
-                workflows. <span className="text-[#89ddff]">&lt;/p&gt;</span>{" "}
-                {"\n\n "} <span className="text-[#89ddff]">&lt;p&gt;</span>{" "}
-                Focused on performance, clarity, and real business impact.{" "}
-                <span className="text-[#89ddff]">&lt;/p&gt;</span> {"\n "}{" "}
-                <span className="text-[#89ddff]">&lt;/section&gt;</span> {"\n "}{" "}
-                ); {"\n}"}{" "}
-                <span className="animate-pulse text-white/40">▍</span>{" "}
-              </code>
+<code>
+<span className="text-[#c792ea]">export default function</span>{" "}
+<span className="text-[#82aaff]">Portfolio</span>() {"{"}
+{"\n  "}
+<span className="text-[#c792ea]">return</span> (
+{"\n    "}
+<span className="text-[#89ddff]">&lt;section</span>{" "}
+<span className="text-[#82aaff]">className</span>
+<span className="text-[#89ddff]">=</span>
+<span className="text-[#ecc48d]">"experience"</span>
+<span className="text-[#89ddff]">&gt;</span>
+
+{"\n      "}
+<span className="text-[#89ddff]">&lt;h1&gt;</span>
+Frontend Engineer
+<span className="text-[#89ddff]">&lt;/h1&gt;</span>
+
+{"\n\n      "}
+<span className="text-[#89ddff]">&lt;p&gt;</span>
+I build scalable SaaS products with
+React, motion, and modern UI systems.
+<span className="text-[#89ddff]">&lt;/p&gt;</span>
+
+{"\n\n      "}
+<span className="text-[#89ddff]">&lt;p&gt;</span>
+I design AI automation using OpenAI,
+n8n, and Zapier to streamline workflows.
+<span className="text-[#89ddff]">&lt;/p&gt;</span>
+
+{"\n\n      "}
+<span className="text-[#89ddff]">&lt;p&gt;</span>
+Focused on performance, clarity,
+and real business impact.
+<span className="text-[#89ddff]">&lt;/p&gt;</span>
+
+{"\n    "}
+<span className="text-[#89ddff]">&lt;/section&gt;</span>
+{"\n  "}
+);
+{"\n}"}
+<span className="animate-pulse text-white/40">▍</span>
+</code>
+
             </pre>
           </motion.div>
 
+          {/* Pills */}
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 6, repeat: Infinity }}
-            className="absolute -right-6 top-12 rounded-xl border border-white/10 bg-white/10 px-4 py-2 text-sm text-white flex items-center gap-2"
+            className="absolute -right-6 top-12 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/60 flex items-center gap-2"
           >
             <SiOpenai /> AI Automation
           </motion.div>
@@ -203,7 +210,7 @@ export default function Hero() {
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 7, repeat: Infinity }}
-            className="absolute -left-6 bottom-12 rounded-xl border border-white/10 bg-white/10 px-4 py-2 text-sm text-white flex items-center gap-2"
+            className="absolute -left-6 bottom-12 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/60 flex items-center gap-2"
           >
             <FaReact /> React Systems
           </motion.div>
@@ -211,14 +218,11 @@ export default function Hero() {
       </div>
 
       {/* SOCIAL */}
-      <div className="fixed right-6 bottom-10 z-50 flex flex-col gap-4 text-black/60">
-        <a
-          href="https://www.linkedin.com/in/anshuman-singh7/"
-          className="hover:text-black"
-        >
+      <div className="fixed right-6 bottom-10 z-50 flex flex-col gap-4 text-white/50">
+        <a href="https://www.linkedin.com/in/anshuman-singh7/" className="hover:text-white">
           <FaLinkedin />
         </a>
-        <a href="https://github.com/tanujgrover9" className="hover:text-black">
+        <a href="https://github.com/tanujgrover9" className="hover:text-white">
           <FaGithub />
         </a>
       </div>
