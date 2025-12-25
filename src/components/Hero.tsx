@@ -118,7 +118,7 @@ export default function Hero() {
       />
 
       {/* ================= HERO GRID ================= */}
-      <div className="relative z-10 max-w-10xl mx-auto px-6 pt-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+      <div className="relative z-10 max-w-10xl mx-auto px-2 pt-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         {/* ================= LEFT ================= */}
         <div className="space-y-8">
           <span className="inline-flex rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm text-white/70 font-handwriting w-fit">
