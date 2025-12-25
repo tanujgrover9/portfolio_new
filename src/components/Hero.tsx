@@ -7,7 +7,7 @@ import {
 } from "framer-motion";
 import { FaGithub, FaLinkedin, FaReact } from "react-icons/fa";
 import { SiOpenai } from "react-icons/si";
-import heroBg from "../assets/projects/bg.png";
+import heroBg from "../assets/projects/norbert-kowalczyk-ffTJoV2Nh4c-unsplash.jpg";
 
 /* ================= MAGNETIC BUTTON ================= */
 function MagneticButton({
@@ -90,7 +90,7 @@ export default function Hero() {
         initial={{ scale: 1.05 }}
         animate={{ scale: 1 }}
         transition={{ duration: 20, ease: "linear" }}
-        className="absolute inset-0 bg-contain bg-center opacity-80 z-111 bg-no-repeat right-[-130px]"
+        className="absolute inset-0 bg-contain bg-center opacity-80 z-111 bg-no-repeat "
         style={{ backgroundImage: `url(${heroBg})` }}
       />
 
