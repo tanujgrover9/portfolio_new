@@ -206,10 +206,10 @@ export default function Hero() {
 
       {/* SOCIAL */}
       <div className="fixed right-6 bottom-10 z-50 flex flex-col gap-4 text-white/60 ">
-        <a href="#" className="hover:text-white transition">
+        <a href="https://www.linkedin.com/in/anshuman-singh7/" className="hover:text-white transition">
           <FaLinkedin />
         </a>
-        <a href="#" className="hover:text-white transition">
+        <a href="https://github.com/tanujgrover9" className="hover:text-white transition">
           <FaGithub />
         </a>
       </div>
