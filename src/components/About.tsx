@@ -28,7 +28,7 @@ export const About = () => {
       {/* Ambient glow */}
       <motion.div
         aria-hidden
-        className="absolute -top-40 left-1/2 -translate-x-1/2 h-[520px] w-[520px] rounded-full bg-emerald-500/20 blur-[160px]"
+        className="absolute -top-40 left-1/2 -translate-x-1/2 h-[520px] w-[520px] rounded-full bg-black blur-[160px]"
         animate={{ scale: [1, 1.15, 1] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
