@@ -90,7 +90,7 @@ export default function Hero() {
         initial={{ scale: 1.05 }}
         animate={{ scale: 1 }}
         transition={{ duration: 20, ease: "linear" }}
-        className="absolute inset-0 bg-contain bg-center opacity-80 z-111 bg-no-repeat "
+        className="absolute inset-0 bg-cover bg-center opacity-80 z-111 bg-no-repeat "
         style={{ backgroundImage: `url(${heroBg})` }}
       />
 
