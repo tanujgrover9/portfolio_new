@@ -89,7 +89,7 @@ export default function Hero() {
 
       {/* Grid */}
       <div
-        className="absolute inset-0 opacity-[0.080]"
+        className="absolute inset-0 opacity-[0.060]"
         style={{
           backgroundImage:
             "linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)",
