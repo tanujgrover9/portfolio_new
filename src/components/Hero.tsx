@@ -1,4 +1,4 @@
-import { useEffect, } from "react";
+import { useEffect } from "react";
 import {
   motion,
   useMotionValue,
@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import { FaGithub, FaLinkedin, FaReact } from "react-icons/fa";
 import { SiOpenai } from "react-icons/si";
+import heroBg from "../assets/projects/bg.png";
 
 /* ================= MAGNETIC BUTTON ================= */
 function MagneticButton({
@@ -83,11 +84,23 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen bg-black overflow-hidden p-12">
-      {/* Spotlight */}
+    <section className="relative min-h-screen overflow-hidden p-12 bg-black">
+      {/* BACKGROUND IMAGE */}
+      <motion.div
+        initial={{ scale: 1.05 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 20, ease: "linear" }}
+        className="absolute inset-0 bg-contain bg-center opacity-80 z-111 bg-no-repeat right-[-130px]"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
+
+      {/* DARK OVERLAY */}
+      <div className="absolute inset-0 bg-black/60" />
+
+      {/* SPOTLIGHT */}
       <motion.div className="absolute inset-0" style={{ background: glow }} />
 
-      {/* Grid */}
+      {/* GRID */}
       <div
         className="absolute inset-0 opacity-[0.060]"
         style={{
@@ -97,6 +110,7 @@ export default function Hero() {
         }}
       />
 
+      {/* CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto pt-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
         {/* LEFT */}
         <div className="space-y-8">
@@ -111,8 +125,7 @@ export default function Hero() {
           </h1>
 
           <p className="max-w-xl text-lg text-white/65 leading-relaxed">
-            I’m{" "}
-            <span className="text-white font-medium">Anshuman Singh</span> — a
+            I’m <span className="text-white font-medium">Anshuman Singh</span> — a
             frontend engineer crafting scalable React systems and AI-powered
             automations using OpenAI, n8n & modern motion design.
           </p>
@@ -145,9 +158,7 @@ export default function Hero() {
               <span className="h-3 w-3 rounded-full bg-red-500" />
               <span className="h-3 w-3 rounded-full bg-yellow-400" />
               <span className="h-3 w-3 rounded-full bg-green-500" />
-              <span className="ml-3 text-xs text-white/40">
-                portfolio.tsx
-              </span>
+              <span className="ml-3 text-xs text-white/40">portfolio.tsx</span>
             </div>
 
             {/* CODE */}
@@ -194,11 +205,10 @@ and real business impact.
 {"\n}"}
 <span className="animate-pulse text-white/40">▍</span>
 </code>
-
             </pre>
           </motion.div>
 
-          {/* Pills */}
+          {/* FLOATING PILLS */}
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 6, repeat: Infinity }}
@@ -219,10 +229,16 @@ and real business impact.
 
       {/* SOCIAL */}
       <div className="fixed right-6 bottom-10 z-50 flex flex-col gap-4 text-white/50">
-        <a href="https://www.linkedin.com/in/anshuman-singh7/" className="hover:text-white">
+        <a
+          href="https://www.linkedin.com/in/anshuman-singh7/"
+          className="hover:text-white"
+        >
           <FaLinkedin />
         </a>
-        <a href="https://github.com/tanujgrover9" className="hover:text-white">
+        <a
+          href="https://github.com/tanujgrover9"
+          className="hover:text-white"
+        >
           <FaGithub />
         </a>
       </div>
