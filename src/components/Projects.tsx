@@ -92,7 +92,7 @@ export const Projects = () => {
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-2">
         {/* Header */}
         <div className="max-w-3xl mb-20">
           <span className="inline-flex rounded-full bg-white/5 px-4 py-1 text-sm text-green-500 mb-6 font-handwriting">
