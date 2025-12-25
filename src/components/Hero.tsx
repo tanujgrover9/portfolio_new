@@ -122,7 +122,7 @@ export default function Hero() {
           >
             Designing & engineering
             <br />
-            premium interfaces
+            <span className=" font-extrabold text-yellow-500">premium interfaces</span>
           </h1>
 
           <p className="max-w-xl text-lg text-white leading-relaxed ">
