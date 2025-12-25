@@ -85,20 +85,15 @@ export default function Hero() {
   return (
     <section className="relative min-h-screen overflow-hidden p-12">
       {/* ===== STRIPE STYLE BACKGROUND ===== */}
-  <div className="absolute inset-0 overflow-hidden">
-<div className="absolute inset-0 bg-[linear-gradient(120deg,#60a5fa_0%,#93c5fd_50%,#e0f2fe_100%)]" />
-  <div
-    className="absolute bottom-0 left-0 right-0 h-[45%] bg-black"
-    style={{
-      clipPath: "polygon(0 25%, 100% 0%, 100% 100%, 0% 100%)",
-    }}
-  />
-</div>
-
-
-
-
-
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-[linear-gradient(120deg,#020617_0%,#0b3c5d_45%,#0f172a_100%)]" />
+        <div
+          className="absolute bottom-0 left-0 right-0 h-[45%] bg-black"
+          style={{
+            clipPath: "polygon(0 25%, 100% 0%, 100% 100%, 0% 100%)",
+          }}
+        />
+      </div>
 
       {/* Spotlight */}
       <motion.div className="absolute inset-0" style={{ background: glow }} />
@@ -117,19 +112,18 @@ export default function Hero() {
         {/* LEFT */}
         <div className="space-y-8">
           <span className="inline-flex rounded-full bg-white/60 px-4 py-1.5 text-sm text-black/80 backdrop-blur font-handwriting">
-  Frontend Engineer · Creative Technologist
-</span>
+            Frontend Engineer · Creative Technologist
+          </span>
 
-
-
-          <h1 className="text-[clamp(2.5rem,5vw,5rem)] leading-[1.05] font-semibold
+          <h1
+            className="text-[clamp(2.5rem,5vw,5rem)] leading-[1.05] font-semibold
   bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 text-white
-  bg-clip-text text-transparent">
-  Designing & engineering
-  <br />
-  premium interfaces
-</h1>
-
+  bg-clip-text text-transparent"
+          >
+            Designing & engineering
+            <br />
+            premium interfaces
+          </h1>
 
           <p className="max-w-xl text-lg text-white leading-relaxed ">
             I’m <span className="text-white font-medium">Anshuman Singh</span> —
