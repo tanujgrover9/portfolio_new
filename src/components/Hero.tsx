@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   motion,
   useMotionValue,
@@ -74,8 +74,8 @@ export default function Hero() {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    rotateX.set(-(y / rect.height - 0.5) * 10);
-    rotateY.set((x / rect.width - 0.5) * 10);
+    rotateX.set(-(y / rect.height - 0.5) * 8);
+    rotateY.set((x / rect.width - 0.5) * 8);
   };
 
   const resetTilt = () => {
@@ -83,26 +83,89 @@ export default function Hero() {
     rotateY.set(0);
   };
 
+  /* ================= TYPING LOGIC ================= */
+  const codeLines = [
+    <>
+      <span className="text-[#c792ea]">export default function</span>{" "}
+      <span className="text-[#82aaff]">Portfolio</span>() {"{"}
+    </>,
+    <>
+      {"  "}
+      <span className="text-[#c792ea]">return</span> (
+    </>,
+    <>
+      {"    "}
+      <span className="text-[#89ddff]">&lt;section</span>{" "}
+      <span className="text-[#82aaff]">className</span>
+      <span className="text-[#89ddff]">=</span>
+      <span className="text-[#ecc48d]">"experience"</span>
+      <span className="text-[#89ddff]">&gt;</span>
+    </>,
+     <>
+      {"      "}
+      <span className="text-[#89ddff]">&lt;h1&gt;</span>
+      I'm Anshuman Singh
+      <span className="text-[#89ddff]">&lt;/h1&gt;</span>
+    </>,
+    <>
+      {"      "}
+      <span className="text-[#89ddff]">&lt;h1&gt;</span>
+      Frontend Engineer
+      <span className="text-[#89ddff]">&lt;/h1&gt;</span>
+    </>,
+    <>
+      {"      "}
+      <span className="text-[#89ddff]">&lt;p&gt;</span>
+      I build scalable, Website, SaaS products with React, motion, and modern UI systems.
+      <span className="text-[#89ddff]">&lt;/p&gt;</span>
+    </>,
+    <>
+      {"      "}
+      <span className="text-[#89ddff]">&lt;p&gt;</span>
+      I design AI automation using OpenAI, n8n, and Zapier to streamline workflows.
+      <span className="text-[#89ddff]">&lt;/p&gt;</span>
+    </>,
+    <>
+      {"      "}
+      <span className="text-[#89ddff]">&lt;p&gt;</span>
+      Focused on performance, clarity, and real business impact.
+      <span className="text-[#89ddff]">&lt;/p&gt;</span>
+    </>,
+    <>
+      {"    "}
+      <span className="text-[#89ddff]">&lt;/section&gt;</span>
+    </>,
+    <>{"  "} );</>,
+    <>{"}"}</>,
+  ];
+
+  const [visibleLines, setVisibleLines] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setVisibleLines((v) =>
+        v < codeLines.length ? v + 1 : v
+      );
+    }, 120);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="relative min-h-screen overflow-hidden p-12 bg-black">
-      {/* BACKGROUND IMAGE */}
+    <section className="relative min-h-screen overflow-hidden bg-black px-8 py-28">
+      {/* BACKGROUND */}
       <motion.div
         initial={{ scale: 1.05 }}
         animate={{ scale: 1 }}
         transition={{ duration: 20, ease: "linear" }}
-        className="absolute inset-0 bg-cover bg-center opacity-80 z-111 bg-no-repeat "
+        className="absolute inset-0 bg-cover bg-center opacity-80"
         style={{ backgroundImage: `url(${heroBg})` }}
       />
-
-      {/* DARK OVERLAY */}
       <div className="absolute inset-0 bg-black/60" />
-
-      {/* SPOTLIGHT */}
       <motion.div className="absolute inset-0" style={{ background: glow }} />
 
       {/* GRID */}
       <div
-        className="absolute inset-0 opacity-[0.060]"
+        className="absolute inset-0 opacity-[0.06]"
         style={{
           backgroundImage:
             "linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)",
@@ -111,49 +174,47 @@ export default function Hero() {
       />
 
       {/* CONTENT */}
-      <div className="relative z-10 max-w-7xl mx-auto pt-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-        {/* LEFT */}
-        <div className="space-y-8">
-          <span className="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-white/60 font-handwriting">
-            Frontend Engineer · Creative Technologist
-          </span>
+      <div className="relative z-10 mx-auto max-w-7xl flex flex-col items-center text-center gap-12">
+       
 
-          <h1 className="text-[clamp(2.5rem,5vw,5rem)] leading-[1.05] font-semibold text-white">
-            Designing & engineering
-            <br />
-            premium interfaces
-          </h1>
+        <h1 className="text-[clamp(2.5rem,5vw,5rem)] leading-[1.05] font-semibold text-white">
+          Designing & engineering
+          <br />
+          premium interfaces
+        </h1>
+<motion.div
+  initial={{ opacity: 0, y: 10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  className="flex items-center gap-3 rounded-full border border-white/15 bg-white/5 backdrop-blur-md px-4 py-2 shadow-[0_0_40px_rgba(34,197,94,0.15)]"
+>
+  {/* Role */}
+  <span className="text-sm font-medium text-white/80">
+    Frontend Engineer · Creative Technologist
+  </span>
 
-          <p className="max-w-xl text-lg text-white/65 leading-relaxed">
-            I’m <span className="text-white font-medium">Anshuman Singh</span> — a
-            frontend engineer crafting scalable React systems and AI-powered
-            automations using OpenAI, n8n & modern motion design.
-          </p>
+  {/* Divider */}
+  <span className="h-4 w-px bg-white/20" />
 
-          <div className="flex gap-4 pt-4">
-            <a href="#projects">
-              <MagneticButton className="rounded-full bg-emerald-500 px-8 py-3 text-sm font-medium text-black">
-                View Projects
-              </MagneticButton>
-            </a>
+  {/* Open to work */}
+  <span className="flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-semibold text-emerald-400 ring-1 ring-emerald-400/30">
+    <span className="relative flex h-2 w-2">
+      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+    </span>
+    Open to work
+  </span>
+</motion.div>
 
-            <a href="https://drive.google.com/file/d/1fvxwJD3-C-J0p6nBcLPvdLS7ZsRIp2g7/view">
-              <MagneticButton className="rounded-full border border-white/15 px-8 py-3 text-sm font-medium text-white hover:bg-white/10">
-                Download CV
-              </MagneticButton>
-            </a>
-          </div>
-        </div>
-
-        {/* RIGHT — VS CODE */}
-        <div className="relative flex justify-center">
+        {/* VS CODE */}
+        <div className="relative w-full flex justify-center">
           <motion.div
             onMouseMove={handleEditorMove}
             onMouseLeave={resetTilt}
             style={{ rotateX: tiltX, rotateY: tiltY }}
-            className="w-full max-w-[420px] rounded-3xl border border-white/10 bg-[#0b0b0c] shadow-[0_60px_160px_rgba(0,0,0,0.8)] overflow-hidden"
+            className="w-full max-w-6xl rounded-2xl border border-white/10 bg-[#0b0b0c]/70 backdrop-blur-xl shadow-[0_60px_160px_rgba(0,0,0,0.8)] overflow-hidden"
           >
-            {/* Title bar */}
+            {/* TITLE BAR */}
             <div className="flex items-center gap-2 px-4 py-3 bg-white/5 border-b border-white/10">
               <span className="h-3 w-3 rounded-full bg-red-500" />
               <span className="h-3 w-3 rounded-full bg-yellow-400" />
@@ -162,57 +223,42 @@ export default function Hero() {
             </div>
 
             {/* CODE */}
-            <pre className="p-6 text-sm font-mono leading-relaxed whitespace-pre-wrap text-[#e5e7eb]">
-<code>
-<span className="text-[#c792ea]">export default function</span>{" "}
-<span className="text-[#82aaff]">Portfolio</span>() {"{"}
-{"\n  "}
-<span className="text-[#c792ea]">return</span> (
-{"\n    "}
-<span className="text-[#89ddff]">&lt;section</span>{" "}
-<span className="text-[#82aaff]">className</span>
-<span className="text-[#89ddff]">=</span>
-<span className="text-[#ecc48d]">"experience"</span>
-<span className="text-[#89ddff]">&gt;</span>
-
-{"\n      "}
-<span className="text-[#89ddff]">&lt;h1&gt;</span>
-Frontend Engineer
-<span className="text-[#89ddff]">&lt;/h1&gt;</span>
-
-{"\n\n      "}
-<span className="text-[#89ddff]">&lt;p&gt;</span>
-I build scalable SaaS products with
-React, motion, and modern UI systems.
-<span className="text-[#89ddff]">&lt;/p&gt;</span>
-
-{"\n\n      "}
-<span className="text-[#89ddff]">&lt;p&gt;</span>
-I design AI automation using OpenAI,
-n8n, and Zapier to streamline workflows.
-<span className="text-[#89ddff]">&lt;/p&gt;</span>
-
-{"\n\n      "}
-<span className="text-[#89ddff]">&lt;p&gt;</span>
-Focused on performance, clarity,
-and real business impact.
-<span className="text-[#89ddff]">&lt;/p&gt;</span>
-
-{"\n    "}
-<span className="text-[#89ddff]">&lt;/section&gt;</span>
-{"\n  "}
-);
-{"\n}"}
-<span className="animate-pulse text-white/40">▍</span>
-</code>
+            <pre className="p-6 text-sm font-mono leading-relaxed whitespace-pre-wrap text-[#e5e7eb] max-h-[320px] overflow-hidden">
+              <code>
+                {codeLines.slice(0, visibleLines).map((line, i) => (
+                  <div key={i}>{line}</div>
+                ))}
+                <span className="animate-pulse text-white/40">▍</span>
+              </code>
             </pre>
+
+            {/* TERMINAL BAR */}
+            <div className="flex items-center justify-between px-6 py-3 border-t border-white/10 bg-black/40">
+              <span className="text-xs text-white/40 font-mono">
+                Terminal · portfolio
+              </span>
+
+              <div className="flex gap-3">
+                <a href="#projects">
+                  <MagneticButton className="rounded-md bg-emerald-500/90 px-4 py-1.5 text-xs font-mono text-black">
+                    ▶ View Projects
+                  </MagneticButton>
+                </a>
+
+                <a href="https://drive.google.com/file/d/1fvxwJD3-C-J0p6nBcLPvdLS7ZsRIp2g7/view">
+                  <MagneticButton className="rounded-md border border-white/20 px-4 py-1.5 text-xs font-mono text-white">
+                    ⬇ Download CV
+                  </MagneticButton>
+                </a>
+              </div>
+            </div>
           </motion.div>
 
           {/* FLOATING PILLS */}
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 6, repeat: Infinity }}
-            className="absolute -right-6 top-12 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/60 flex items-center gap-2"
+            className="absolute right-6 top-6 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/60 flex items-center gap-2"
           >
             <SiOpenai /> AI Automation
           </motion.div>
@@ -220,7 +266,7 @@ and real business impact.
           <motion.div
             animate={{ y: [0, -10, 0] }}
             transition={{ duration: 7, repeat: Infinity }}
-            className="absolute -left-6 bottom-12 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/60 flex items-center gap-2"
+            className="absolute left-6 bottom-6 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/60 flex items-center gap-2"
           >
             <FaReact /> React Systems
           </motion.div>
@@ -229,16 +275,10 @@ and real business impact.
 
       {/* SOCIAL */}
       <div className="fixed right-6 bottom-10 z-50 flex flex-col gap-4 text-white/50">
-        <a
-          href="https://www.linkedin.com/in/anshuman-singh7/"
-          className="hover:text-white"
-        >
+        <a href="https://www.linkedin.com/in/anshuman-singh7/" className="hover:text-white">
           <FaLinkedin />
         </a>
-        <a
-          href="https://github.com/tanujgrover9"
-          className="hover:text-white"
-        >
+        <a href="https://github.com/tanujgrover9" className="hover:text-white">
           <FaGithub />
         </a>
       </div>
