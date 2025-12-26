@@ -87,7 +87,7 @@ export const Skills = () => {
   const current = capabilities[active];
 
   return (
-    <section className="relative bg-black py-32 border-t border-white/10 overflow-hidden">
+    <section id="skills" className="relative bg-black py-32 border-t border-white/10 overflow-hidden">
       {/* Subtle grid */}
       <div
         className="absolute inset-0 opacity-[0.035] pointer-events-none"
