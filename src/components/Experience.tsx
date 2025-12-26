@@ -20,7 +20,7 @@ export const Experience = () => {
   ];
 
   return (
-    <section className="relative bg-black py-32 border-t border-white/10">
+    <section id="experience" className="relative bg-black py-32 border-t border-white/10">
       {/* Subtle grid background */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
