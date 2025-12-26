@@ -151,7 +151,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative min-h-screen overflow-hidden bg-black px-8 py-28">
+    <section className="relative min-h-screen overflow-hidden bg-black px-8 py-28 mt-[-60px]">
       {/* BACKGROUND */}
       <motion.div
         initial={{ scale: 1.05 }}
