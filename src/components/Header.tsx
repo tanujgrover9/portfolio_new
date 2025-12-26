@@ -1,5 +1,5 @@
 import { motion, AnimatePresence, useScroll } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect,  useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
@@ -14,22 +14,13 @@ const navItems = [
 export default function Navbar() {
   const [active, setActive] = useState("home");
   const [open, setOpen] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const lastScrollY = useRef(0);
 
   /* ===== Scroll progress ===== */
   const { scrollYProgress } = useScroll();
 
-  /* ===== Scroll spy + hide/show ===== */
+  /* ===== Scroll spy ===== */
   useEffect(() => {
     const onScroll = () => {
-      const currentY = window.scrollY;
-
-      // Hide / show
-      setHidden(currentY > lastScrollY.current && currentY > 120);
-      lastScrollY.current = currentY;
-
-      // Active section
       navItems.forEach(({ id }) => {
         const el = document.getElementById(id);
         if (!el) return;
@@ -55,17 +46,20 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ================= DESKTOP NAV ================= */}
+      {/* ================= DESKTOP STICKY NAV ================= */}
       <motion.nav
-        animate={{ y: hidden ? -120 : 0 }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
         className="
           hidden md:flex
-          fixed top-6 left-1/2 -translate-x-1/2 z-50
+          sticky top-6  z-50
+          left-1/2 -translate-x-1/2
+          w-fit mx-auto
           items-center gap-1.5 rounded-full
           border border-white/15
           bg-black/60 backdrop-blur-2xl
-          px-3 py-2
+
+          /* width increased */
+          px-[22px] py-2
+
           shadow-[0_20px_80px_rgba(0,0,0,0.6)]
           overflow-hidden
         "
@@ -76,9 +70,6 @@ export default function Navbar() {
           style={{ scaleX: scrollYProgress, transformOrigin: "0%" }}
         />
 
-        {/* Open to work */}
-        
-
         {navItems.map((item) => {
           const isActive = active === item.id;
 
@@ -87,7 +78,8 @@ export default function Navbar() {
               key={item.id}
               onClick={() => scrollTo(item.id)}
               className="
-                relative px-4 py-2 rounded-full
+                relative
+                px-4 py-2 rounded-full
                 text-sm font-medium transition
                 text-white/70 hover:text-white
               "
@@ -125,7 +117,7 @@ export default function Navbar() {
       </motion.nav>
 
       {/* ================= MOBILE TOGGLE ================= */}
-      <div className="md:hidden fixed top-5 right-5 z-50">
+      <div className="md:hidden sticky top-5 z-50 flex justify-end px-4">
         <motion.button
           whileTap={{ scale: 0.9 }}
           onClick={() => setOpen((p) => !p)}
