@@ -7,6 +7,7 @@ import {
 } from "framer-motion";
 import { FaGithub, FaLinkedin, FaReact } from "react-icons/fa";
 import { SiOpenai } from "react-icons/si";
+// import heroBg from "../assets/projects/norbert-kowalczyk-ffTJoV2Nh4c-unsplash.jpg";
 
 /* ================= MAGNETIC BUTTON ================= */
 function MagneticButton({
@@ -154,7 +155,7 @@ export default function Hero() {
 
       {/* GRID */}
       <div
-        className="absolute inset-0 opacity-[0.090]"
+        className="absolute inset-0 opacity-[0.06]"
         style={{
           backgroundImage:
             "linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)",
@@ -206,8 +207,8 @@ export default function Hero() {
       />
 
       {/* CONTENT */}
-      <div className="relative z-10 mx-auto max-w-7xl flex flex-col items-center text-center gap-12 ">
-        <h1 className="text-[clamp(2.5rem,5vw,5rem)] leading-[1.05] font-semibold text-white">
+      <div className="relative z-10 mx-auto max-w-7xl flex flex-col items-center text-center gap-12 backdrop-blur-[3px]">
+        <h1 className="text-[clamp(2.5rem,5vw,5rem)] leading-[1.05] font-semibold text-white ">
           Designing & engineering
           <br />
           premium interfaces
@@ -216,10 +217,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex items-center gap-3 rounded-full border border-white/15 bg-white/5 backdrop-blur-md px-4 py-2 shadow-[0_0_40px_rgba(34,197,94,0.15)]"
+          className=" flex items-center gap-3 rounded-full border border-white/15 bg-white/5 backdrop-blur-md px-4 py-2 shadow-[0_0_40px_rgba(34,197,94,0.15)]"
         >
           {/* Role */}
-          <span className="text-sm font-medium text-white/80">
+          <span className="text-sm font-medium text-white/80 ">
             Frontend Engineer · Creative Technologist
           </span>
 
@@ -229,15 +230,16 @@ export default function Hero() {
           {/* Open to work */}
           <span className="flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-semibold text-emerald-400 ring-1 ring-emerald-400/30">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-100" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
             </span>
             Open to work
           </span>
         </motion.div>
 
         {/* VS CODE */}
-        <div className="relative w-full flex justify-center">
+        
+        <MagneticButton className="relative w-full flex justify-center">
           <motion.div
             onMouseMove={handleEditorMove}
             onMouseLeave={resetTilt}
@@ -283,6 +285,7 @@ export default function Hero() {
               </div>
             </div>
           </motion.div>
+          
 
           {/* FLOATING PILLS */}
           <motion.div
@@ -300,7 +303,7 @@ export default function Hero() {
           >
             <FaReact /> React Systems
           </motion.div>
-        </div>
+        </MagneticButton>
       </div>
 
       {/* SOCIAL */}
