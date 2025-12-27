@@ -7,7 +7,6 @@ import {
 } from "framer-motion";
 import { FaGithub, FaLinkedin, FaReact } from "react-icons/fa";
 import { SiOpenai } from "react-icons/si";
-// import heroBg from "../assets/projects/norbert-kowalczyk-ffTJoV2Nh4c-unsplash.jpg";
 
 /* ================= MAGNETIC BUTTON ================= */
 function MagneticButton({
@@ -101,7 +100,7 @@ export default function Hero() {
       <span className="text-[#ecc48d]">"experience"</span>
       <span className="text-[#89ddff]">&gt;</span>
     </>,
-     <>
+    <>
       {"      "}
       <span className="text-[#89ddff]">&lt;h1&gt;</span>
       I'm Anshuman Singh
@@ -115,14 +114,14 @@ export default function Hero() {
     </>,
     <>
       {"      "}
-      <span className="text-[#89ddff]">&lt;p&gt;</span>
-      I build scalable, Website, SaaS products with React, motion, and modern UI systems.
+      <span className="text-[#89ddff]">&lt;p&gt;</span>I build scalable,
+      Website, SaaS products with React, motion, and modern UI systems.
       <span className="text-[#89ddff]">&lt;/p&gt;</span>
     </>,
     <>
       {"      "}
-      <span className="text-[#89ddff]">&lt;p&gt;</span>
-      I design AI automation using OpenAI, n8n, and Zapier to streamline workflows.
+      <span className="text-[#89ddff]">&lt;p&gt;</span>I design AI automation
+      using OpenAI, n8n, and Zapier to streamline workflows.
       <span className="text-[#89ddff]">&lt;/p&gt;</span>
     </>,
     <>
@@ -143,29 +142,26 @@ export default function Hero() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setVisibleLines((v) =>
-        v < codeLines.length ? v + 1 : v
-      );
+      setVisibleLines((v) => (v < codeLines.length ? v + 1 : v));
     }, 120);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-black px-8 py-28 mt-[-60px]">
-     
       <div className="absolute inset-0 bg-black/60" />
       <motion.div className="absolute inset-0" style={{ background: glow }} />
 
       {/* GRID */}
       <div
-        className="absolute inset-0 opacity-[0.06]"
+        className="absolute inset-0 opacity-[0.090]"
         style={{
           backgroundImage:
             "linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)",
           backgroundSize: "90px 90px",
         }}
       />
-      
+
       {/* ================= BIG COLORED GRID CELLS ================= */}
       <motion.div
         className="absolute inset-0"
@@ -210,37 +206,35 @@ export default function Hero() {
       />
 
       {/* CONTENT */}
-      <div className="relative z-10 mx-auto max-w-7xl flex flex-col items-center text-center gap-12">
-       
-
+      <div className="relative z-10 mx-auto max-w-7xl flex flex-col items-center text-center gap-12 ">
         <h1 className="text-[clamp(2.5rem,5vw,5rem)] leading-[1.05] font-semibold text-white">
           Designing & engineering
           <br />
           premium interfaces
         </h1>
-<motion.div
-  initial={{ opacity: 0, y: 10 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.6 }}
-  className="flex items-center gap-3 rounded-full border border-white/15 bg-white/5 backdrop-blur-md px-4 py-2 shadow-[0_0_40px_rgba(34,197,94,0.15)]"
->
-  {/* Role */}
-  <span className="text-sm font-medium text-white/80">
-    Frontend Engineer · Creative Technologist
-  </span>
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex items-center gap-3 rounded-full border border-white/15 bg-white/5 backdrop-blur-md px-4 py-2 shadow-[0_0_40px_rgba(34,197,94,0.15)]"
+        >
+          {/* Role */}
+          <span className="text-sm font-medium text-white/80">
+            Frontend Engineer · Creative Technologist
+          </span>
 
-  {/* Divider */}
-  <span className="h-4 w-px bg-white/20" />
+          {/* Divider */}
+          <span className="h-4 w-px bg-white/20" />
 
-  {/* Open to work */}
-  <span className="flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-semibold text-emerald-400 ring-1 ring-emerald-400/30">
-    <span className="relative flex h-2 w-2">
-      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-    </span>
-    Open to work
-  </span>
-</motion.div>
+          {/* Open to work */}
+          <span className="flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-semibold text-emerald-400 ring-1 ring-emerald-400/30">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+            </span>
+            Open to work
+          </span>
+        </motion.div>
 
         {/* VS CODE */}
         <div className="relative w-full flex justify-center">
@@ -311,7 +305,10 @@ export default function Hero() {
 
       {/* SOCIAL */}
       <div className="fixed right-6 bottom-10 z-50 flex flex-col gap-4 text-white/50">
-        <a href="https://www.linkedin.com/in/anshuman-singh7/" className="hover:text-white">
+        <a
+          href="https://www.linkedin.com/in/anshuman-singh7/"
+          className="hover:text-white"
+        >
           <FaLinkedin />
         </a>
         <a href="https://github.com/tanujgrover9" className="hover:text-white">
