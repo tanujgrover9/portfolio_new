@@ -7,7 +7,7 @@ import {
 } from "framer-motion";
 import { FaGithub, FaLinkedin, FaReact } from "react-icons/fa";
 import { SiOpenai } from "react-icons/si";
-import heroBg from "../assets/projects/norbert-kowalczyk-ffTJoV2Nh4c-unsplash.jpg";
+// import heroBg from "../assets/projects/norbert-kowalczyk-ffTJoV2Nh4c-unsplash.jpg";
 
 /* ================= MAGNETIC BUTTON ================= */
 function MagneticButton({
@@ -152,14 +152,7 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-black px-8 py-28 mt-[-60px]">
-      {/* BACKGROUND */}
-      <motion.div
-        initial={{ scale: 1.05 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 20, ease: "linear" }}
-        className="absolute inset-0 bg-cover bg-center opacity-80"
-        style={{ backgroundImage: `url(${heroBg})` }}
-      />
+     
       <div className="absolute inset-0 bg-black/60" />
       <motion.div className="absolute inset-0" style={{ background: glow }} />
 
@@ -170,6 +163,49 @@ export default function Hero() {
           backgroundImage:
             "linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px)",
           backgroundSize: "90px 90px",
+        }}
+      />
+      
+      {/* ================= BIG COLORED GRID CELLS ================= */}
+      <motion.div
+        className="absolute inset-0"
+        animate={{ opacity: [0.55, 0.85, 0.55] }}
+        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
+        style={{
+          backgroundRepeat: "no-repeat",
+          backgroundImage: `
+            linear-gradient(#22c55e 0 0),
+            linear-gradient(#f97316 0 0),
+            linear-gradient(#ef4444 0 0),
+            linear-gradient(#3b82f6 0 0),
+            linear-gradient(#a855f7 0 0),
+            linear-gradient(#14b8a6 0 0),
+            linear-gradient(#eab308 0 0),
+            linear-gradient(#ec4899 0 0),
+            linear-gradient(#6366f1 0 0)
+          `,
+          backgroundSize: `
+            128px 128px,
+            128px 128px,
+            128px 128px,
+            128px 128px,
+            128px 128px,
+            128px 128px,
+            128px 128px,
+            128px 128px,
+            128px 128px
+          `,
+          backgroundPosition: `
+            128px 128px,
+            384px 192px,
+            640px 320px,
+            256px 512px,
+            768px 128px,
+            512px 640px,
+            896px 384px,
+            1024px 192px,
+            320px 768px
+          `,
         }}
       />
 
