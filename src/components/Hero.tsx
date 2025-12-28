@@ -7,7 +7,6 @@ import {
 } from "framer-motion";
 import { FaGithub, FaLinkedin, FaReact } from "react-icons/fa";
 import { SiOpenai } from "react-icons/si";
-// import heroBg from "../assets/projects/norbert-kowalczyk-ffTJoV2Nh4c-unsplash.jpg";
 
 /* ================= MAGNETIC BUTTON ================= */
 function MagneticButton({
@@ -42,7 +41,6 @@ function MagneticButton({
 
 /* ================= HERO ================= */
 export default function Hero() {
-  /* Cursor spotlight */
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const smoothX = useSpring(mouseX, { stiffness: 120, damping: 30 });
@@ -58,12 +56,11 @@ export default function Hero() {
   }, []);
 
   const glow = useMotionTemplate`
-    radial-gradient(380px at ${smoothX}px ${smoothY}px,
-      rgba(34,197,94,0.08),
+    radial-gradient(420px at ${smoothX}px ${smoothY}px,
+      rgba(34,197,94,0.10),
       transparent 70%)
   `;
 
-  /* Editor tilt */
   const rotateX = useMotionValue(0);
   const rotateY = useMotionValue(0);
   const tiltX = useSpring(rotateX, { stiffness: 120, damping: 20 });
@@ -83,60 +80,33 @@ export default function Hero() {
     rotateY.set(0);
   };
 
-  /* ================= TYPING LOGIC ================= */
   const codeLines = [
-    <>
-      <span className="text-[#c792ea]">export default function</span>{" "}
-      <span className="text-[#82aaff]">Portfolio</span>() {"{"}
-    </>,
-    <>
-      {"  "}
-      <span className="text-[#c792ea]">return</span> (
-    </>,
-    <>
-      {"    "}
-      <span className="text-[#89ddff]">&lt;section</span>{" "}
-      <span className="text-[#82aaff]">className</span>
-      <span className="text-[#89ddff]">=</span>
-      <span className="text-[#ecc48d]">"experience"</span>
-      <span className="text-[#89ddff]">&gt;</span>
-    </>,
-    <>
-      {"      "}
-      <span className="text-[#89ddff]">&lt;h1&gt;</span>
-      I'm Anshuman Singh
-      <span className="text-[#89ddff]">&lt;/h1&gt;</span>
-    </>,
-    <>
-      {"      "}
-      <span className="text-[#89ddff]">&lt;h1&gt;</span>
-      Frontend Engineer
-      <span className="text-[#89ddff]">&lt;/h1&gt;</span>
-    </>,
-    <>
-      {"      "}
-      <span className="text-[#89ddff]">&lt;p&gt;</span>I build scalable,
-      Website, SaaS products with React, motion, and modern UI systems.
-      <span className="text-[#89ddff]">&lt;/p&gt;</span>
-    </>,
-    <>
-      {"      "}
-      <span className="text-[#89ddff]">&lt;p&gt;</span>I design AI automation
-      using OpenAI, n8n, and Zapier to streamline workflows.
-      <span className="text-[#89ddff]">&lt;/p&gt;</span>
-    </>,
-    <>
-      {"      "}
-      <span className="text-[#89ddff]">&lt;p&gt;</span>
-      Focused on performance, clarity, and real business impact.
-      <span className="text-[#89ddff]">&lt;/p&gt;</span>
-    </>,
-    <>
-      {"    "}
-      <span className="text-[#89ddff]">&lt;/section&gt;</span>
-    </>,
-    <>{"  "} );</>,
-    <>{"}"}</>,
+    <> <span className="text-[#c792ea]">export default function</span>{" "}
+       <span className="text-[#82aaff]">Portfolio</span>() {"{"} </>,
+    <> {"  "} <span className="text-[#c792ea]">return</span> ( </>,
+    <> {"    "} <span className="text-[#89ddff]">&lt;section</span>{" "}
+       <span className="text-[#82aaff]">className</span>
+       <span className="text-[#89ddff]">=</span>
+       <span className="text-[#ecc48d]">"experience"</span>
+       <span className="text-[#89ddff]">&gt;</span> </>,
+    <> {"      "} <span className="text-[#89ddff]">&lt;h1&gt;</span>
+       I'm Anshuman Singh
+       <span className="text-[#89ddff]">&lt;/h1&gt;</span> </>,
+    <> {"      "} <span className="text-[#89ddff]">&lt;h1&gt;</span>
+       Frontend Engineer
+       <span className="text-[#89ddff]">&lt;/h1&gt;</span> </>,
+    <> {"      "} <span className="text-[#89ddff]">&lt;p&gt;</span>
+       I build scalable websites & SaaS products with React and motion.
+       <span className="text-[#89ddff]">&lt;/p&gt;</span> </>,
+    <> {"      "} <span className="text-[#89ddff]">&lt;p&gt;</span>
+       I design AI automation using OpenAI, n8n, and Zapier.
+       <span className="text-[#89ddff]">&lt;/p&gt;</span> </>,
+    <> {"      "} <span className="text-[#89ddff]">&lt;p&gt;</span>
+       Focused on performance, clarity, and business impact.
+       <span className="text-[#89ddff]">&lt;/p&gt;</span> </>,
+    <> {"    "} <span className="text-[#89ddff]">&lt;/section&gt;</span> </>,
+    <> {"  "} ); </>,
+    <> {"}"} </>,
   ];
 
   const [visibleLines, setVisibleLines] = useState(0);
@@ -150,10 +120,11 @@ export default function Hero() {
 
   return (
     <section className="relative min-h-screen overflow-hidden bg-black px-8 py-28 mt-[-60px]">
-      <div className="absolute inset-0 bg-black/60" />
+      {/* Ambient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black to-[#060606]" />
       <motion.div className="absolute inset-0" style={{ background: glow }} />
 
-      {/* GRID */}
+      {/* Grid */}
       <div
         className="absolute inset-0 opacity-[0.06]"
         style={{
@@ -163,90 +134,46 @@ export default function Hero() {
         }}
       />
 
-      {/* ================= BIG COLORED GRID CELLS ================= */}
-      <motion.div
-        className="absolute inset-0"
-        animate={{ opacity: [0.55, 0.85, 0.55] }}
-        transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
-        style={{
-          backgroundRepeat: "no-repeat",
-          backgroundImage: `
-            linear-gradient(#22c55e 0 0),
-            linear-gradient(#f97316 0 0),
-            linear-gradient(#ef4444 0 0),
-            linear-gradient(#3b82f6 0 0),
-            linear-gradient(#a855f7 0 0),
-            linear-gradient(#14b8a6 0 0),
-            linear-gradient(#eab308 0 0),
-            linear-gradient(#ec4899 0 0),
-            linear-gradient(#6366f1 0 0)
-          `,
-          backgroundSize: `
-            128px 128px,
-            128px 128px,
-            128px 128px,
-            128px 128px,
-            128px 128px,
-            128px 128px,
-            128px 128px,
-            128px 128px,
-            128px 128px
-          `,
-          backgroundPosition: `
-            128px 128px,
-            384px 192px,
-            640px 320px,
-            256px 512px,
-            768px 128px,
-            512px 640px,
-            896px 384px,
-            1024px 192px,
-            320px 768px
-          `,
-        }}
-      />
-
-      {/* CONTENT */}
-      <div className="relative z-10 mx-auto max-w-7xl flex flex-col items-center text-center gap-12 backdrop-blur-[3px]">
-        <h1 className="text-[clamp(2.5rem,5vw,5rem)] leading-[1.05] font-semibold text-white ">
+      <div className="relative z-10 mx-auto max-w-7xl flex flex-col items-center text-center gap-14">
+        {/* Headline */}
+        <h1 className="text-[clamp(2.7rem,5vw,5.2rem)] leading-[1.05] font-semibold bg-gradient-to-b from-white to-white/60 bg-clip-text text-transparent">
           Designing & engineering
           <br />
-          premium interfaces
+          <span className="bg-gradient-to-r from-emerald-400 to-cyan-400 bg-clip-text text-transparent">
+            premium interfaces
+          </span>
         </h1>
+
+        {/* Role pill */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className=" flex items-center gap-3 rounded-full border border-white/15 bg-white/5 backdrop-blur-md px-4 py-2 shadow-[0_0_40px_rgba(34,197,94,0.15)]"
+          className="flex items-center gap-3 rounded-full border border-white/15 bg-white/5 backdrop-blur-xl px-5 py-2.5 shadow-[0_0_60px_rgba(34,197,94,0.18)]"
         >
-          {/* Role */}
-          <span className="text-sm font-medium text-white/80 ">
+          <span className="text-sm font-medium text-white/80">
             Frontend Engineer · Creative Technologist
           </span>
 
-          {/* Divider */}
           <span className="h-4 w-px bg-white/20" />
 
-          {/* Open to work */}
-          <span className="flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-0.5 text-xs font-semibold text-emerald-400 ring-1 ring-emerald-400/30">
+          <span className="flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-3 py-0.5 text-xs font-semibold text-emerald-400 ring-1 ring-emerald-400/30">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-100" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-green-400" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
             </span>
             Open to work
           </span>
         </motion.div>
 
-        {/* VS CODE */}
-        
+        {/* Editor */}
         <MagneticButton className="relative w-full flex justify-center">
           <motion.div
             onMouseMove={handleEditorMove}
             onMouseLeave={resetTilt}
             style={{ rotateX: tiltX, rotateY: tiltY }}
-            className="w-full max-w-6xl rounded-2xl border border-white/10 bg-[#0b0b0c]/70 backdrop-blur-xl shadow-[0_60px_160px_rgba(0,0,0,0.8)] overflow-hidden"
+            className="w-full max-w-6xl rounded-2xl border border-white/10 bg-[#0b0b0c]/80 backdrop-blur-xl shadow-[0_80px_220px_rgba(0,0,0,0.85)] overflow-hidden"
           >
-            {/* TITLE BAR */}
             <div className="flex items-center gap-2 px-4 py-3 bg-white/5 border-b border-white/10">
               <span className="h-3 w-3 rounded-full bg-red-500" />
               <span className="h-3 w-3 rounded-full bg-yellow-400" />
@@ -254,8 +181,7 @@ export default function Hero() {
               <span className="ml-3 text-xs text-white/40">portfolio.tsx</span>
             </div>
 
-            {/* CODE */}
-            <pre className="p-6 text-sm font-mono leading-relaxed whitespace-pre-wrap text-[#e5e7eb] max-h-[320px] overflow-hidden">
+            <pre className="p-6 text-sm font-mono leading-relaxed whitespace-pre-wrap text-[#e5e7eb] max-h-[340px] overflow-hidden">
               <code>
                 {codeLines.slice(0, visibleLines).map((line, i) => (
                   <div key={i}>{line}</div>
@@ -264,7 +190,6 @@ export default function Hero() {
               </code>
             </pre>
 
-            {/* TERMINAL BAR */}
             <div className="flex items-center justify-between px-6 py-3 border-t border-white/10 bg-black/40">
               <span className="text-xs text-white/40 font-mono">
                 Terminal · portfolio
@@ -272,46 +197,42 @@ export default function Hero() {
 
               <div className="flex gap-3">
                 <a href="#projects">
-                  <MagneticButton className="rounded-md bg-emerald-500/90 px-4 py-1.5 text-xs font-mono text-black">
+                  <MagneticButton className="rounded-md bg-emerald-500/90 px-4 py-1.5 text-xs font-mono text-black shadow-lg">
                     ▶ View Projects
                   </MagneticButton>
                 </a>
 
                 <a href="https://drive.google.com/file/d/1fvxwJD3-C-J0p6nBcLPvdLS7ZsRIp2g7/view">
-                  <MagneticButton className="rounded-md border border-white/20 px-4 py-1.5 text-xs font-mono text-white">
+                  <MagneticButton className="rounded-md border border-white/20 px-4 py-1.5 text-xs font-mono text-white hover:bg-white/5">
                     ⬇ Download CV
                   </MagneticButton>
                 </a>
               </div>
             </div>
           </motion.div>
-          
 
-          {/* FLOATING PILLS */}
+          {/* Floating pills */}
           <motion.div
-            animate={{ y: [0, 10, 0] }}
+            animate={{ y: [0, 12, 0] }}
             transition={{ duration: 6, repeat: Infinity }}
-            className="absolute right-6 top-6 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/60 flex items-center gap-2"
+            className="absolute right-6 top-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md px-4 py-2 text-sm text-white/60 flex items-center gap-2"
           >
             <SiOpenai /> AI Automation
           </motion.div>
 
           <motion.div
-            animate={{ y: [0, -10, 0] }}
+            animate={{ y: [0, -12, 0] }}
             transition={{ duration: 7, repeat: Infinity }}
-            className="absolute left-6 bottom-6 rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/60 flex items-center gap-2"
+            className="absolute left-6 bottom-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md px-4 py-2 text-sm text-white/60 flex items-center gap-2"
           >
             <FaReact /> React Systems
           </motion.div>
         </MagneticButton>
       </div>
 
-      {/* SOCIAL */}
+      {/* Social */}
       <div className="fixed right-6 bottom-10 z-50 flex flex-col gap-4 text-white/50">
-        <a
-          href="https://www.linkedin.com/in/anshuman-singh7/"
-          className="hover:text-white"
-        >
+        <a href="https://www.linkedin.com/in/anshuman-singh7/" className="hover:text-white">
           <FaLinkedin />
         </a>
         <a href="https://github.com/tanujgrover9" className="hover:text-white">
