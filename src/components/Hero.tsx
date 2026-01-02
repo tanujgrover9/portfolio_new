@@ -202,7 +202,7 @@ export default function Hero() {
                   </MagneticButton>
                 </a>
 
-                <a href="https://drive.google.com/file/d/1fvxwJD3-C-J0p6nBcLPvdLS7ZsRIp2g7/view">
+                <a href="https://drive.google.com/file/d/1C66AJKZ6T3lAGFrUWnMlSsbjW-CCWgEv/view?usp=sharing">
                   <MagneticButton className="rounded-md border border-white/20 px-4 py-1.5 text-xs font-mono text-white hover:bg-white/5">
                     ⬇ Download CV
                   </MagneticButton>
@@ -242,3 +242,4 @@ export default function Hero() {
     </section>
   );
 }
+
